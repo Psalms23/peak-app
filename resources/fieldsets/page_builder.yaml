@@ -1,0 +1,50 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      localizable: true
+      collapse: true
+      listable: true
+      display: 'Page builder'
+      instructions: 'Build your page by using various predefined content models.'
+      sets:
+        banner:
+          display: Banner
+          fields:
+            -
+              handle: image_background
+              field:
+                mode: grid
+                container: assets
+                restrict: false
+                allow_uploads: true
+                max_files: 1
+                display: 'Image Background'
+                type: assets
+                icon: assets
+                instructions: 'Upload image for the page'
+                listable: true
+            -
+              handle: button_replicator
+              field:
+                collapse: false
+                max_sets: 2
+                sets:
+                  new_set:
+                    display: 'New Set'
+                    fields:
+                      -
+                        import: button
+                display: 'Button Replicator'
+                type: replicator
+                icon: replicator
+                instructions: 'Button page 2'
+                listable: true
+        blog:
+          display: Blog
+          fields:
+            -
+              import: video
+      max_sets: 1

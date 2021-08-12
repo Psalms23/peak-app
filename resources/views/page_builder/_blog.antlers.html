@@ -1,0 +1,10 @@
+{{#
+	@name Blog
+	@desc The blog page builder block.
+    @set page.page_builder.blog
+#}}
+<blog class="fluid-container grid grid-cols-12 gap-y-4">
+    {{ page_builder }}
+        {{ partial src="components/video"}}
+    {{ /page_builder }}
+</blog>
