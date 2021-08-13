@@ -4,9 +4,23 @@
     @set page.page_builder.banner
 #}}
 
-<banner class="fluid-container grid grid-cols-12 gap-y-4">
-    {{ page_builder | dump }}
-    {{ page_builder }}
-            {{ image_background }}   
-    {{ /page_builder }}
-</bbannerog>
+<section class="text-gray-600 body-font">
+	<div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"></div>
+	{{ page_builder }}
+		<div class="mx-auto flex px-5 items-center flex-col relative justify-end bg-cover bg-no-repeat linear h-screen w-full" style="background-image: url('{{ image_background }}');">
+	        <div class="text-center  w-full absolute align-bottom mb-16 z-10	">
+	            <div class="md:flex w-full justify-evenly font-roboto ">
+		            <a href="{{ page_builder:0:button_replicator:0:url }}" class="mb-10 text-bvWhite bg-bvOrange btn">{{ page_builder:0:button_replicator:0:label }}</a>
+		            <a href="{{ page_builder:0:button_replicator:1:url }}" class="mb-10 text-bvBlue bg-bvYellow btn">{{ page_builder:0:button_replicator:1:label }}</a>
+	            </div>
+	        </div>
+	    </div>
+	  <!--  <div class="bg-auto bg-no-repeat bg-center ..." style="background-image: url('{{ image_background }}')">Hello</div> -->
+	   <!-- <div class="bg-cover">
+	   		<img class="mt-6 rounded-lg shadow-xl" src="{{ image_background }}" alt="BG image">
+	   		<h1 class="mt-6 text-2xl font-bold text-gray-900">You can work from anywhere. <span class="text-indigo-500">Take advantage of it.</span> </h1>
+	   </div>  -->
+	   <a href="#" class="inline-block rounded-lg shadow-lg bg-green-100">WAZAAAAAP</a>
+
+    {{ /page_builder }}  
+</section>
