@@ -1,6 +1,6 @@
 {{#
-	@name Main navigation
-	@desc The sites main navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity. There's a desktop and a mobile version.
+    @name Main navigation
+    @desc The sites main navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity. There's a desktop and a mobile version.
 #}}
 
 {{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
@@ -14,7 +14,7 @@
                 class="relative leading-none"
             >
                 <a
-                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-neutral {{ is_current || is_parent ? 'text-neutral' : 'text-neutral' }}"
+                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="subnavOpen = !subnavOpen"
@@ -41,9 +41,9 @@
                         x-cloak
                     >
                         {{ children }}
-                            <li class="">
+                            <li class="relative z-50">
                                 <a
-                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-neutral {{ is_current || is_parent ? 'text-neutral' : 'text-neutral' }}"
+                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}"
                                 >
                                     {{ title }}
@@ -67,7 +67,7 @@
 >
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen"
-        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-white text-uppercase"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-primary text-uppercase"
         aria-label="Toggle menu"
         x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
     ></button>
@@ -85,7 +85,7 @@
                 class="leading-none"
             >
                 <a
-                    class="flex items-center font-bold uppercase tracking-wide hover:text-neutral {{ is_current || is_parent ? 'text-neutral' : 'text-neutral' }}"
+                    class="flex items-center font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
@@ -112,9 +112,9 @@
                         x-cloak
                     >
                         {{ children }}
-                            <li>
+                            <li class="relative z-50">
                                 <a
-                                    class="whitespace-nowrap font-bold hover:text-neutral {{ is_current || is_parent ? 'text-neutral' : 'text-neutral' }}"
+                                    class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}">
                                     {{ title }}
                                 </a>
